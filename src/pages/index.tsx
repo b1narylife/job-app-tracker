@@ -9,7 +9,19 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className="text-center">Job Application Tracker</h1>
+        <header className="header py-3 bg-blue-500">
+          <div className="container flex flex-row items-center justify-between mx-auto">
+            <div className="branding flex flex-row items-center">
+              <img className="mx-2" src="" alt="Logo" />
+              <h1 className="mx-2">Job Application Tracker</h1>
+            </div>
+
+            <div className="flex flex-row items-center">
+              <div className="user mx-2">User</div>
+              <div className="settings mx-2">Cog</div>
+            </div>
+          </div>
+        </header>
       </main>
     </div>
   );
