@@ -12,6 +12,9 @@ const Home = () => {
 
       <main>
         <Header />
+        <div className="container mx-auto py-3">
+          <h2>Cards</h2>
+        </div>
       </main>
     </div>
   );
