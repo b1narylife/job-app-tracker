@@ -15,11 +15,7 @@ const Home = () => {
         <header className="py-3 shadow-2xl">
           <div className="container flex flex-row items-center justify-between mx-auto">
             <div className="branding flex flex-row items-center">
-              <img
-                src=""
-                alt="Job Application Tracker"
-                style={{ maxWidth: '200px' }}
-              />
+              <h1>Job Application Tracker</h1>
             </div>
 
             <div className="flex flex-row items-center">
