@@ -9,7 +9,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>Job Application Tracker</h1>
+        <h1 className="text-center">Job Application Tracker</h1>
       </main>
     </div>
   );
