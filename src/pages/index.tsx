@@ -9,7 +9,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <header className="header py-3 bg-blue-500">
+        <header className="header py-3 bg-gray-800 text-white">
           <div className="container flex flex-row items-center justify-between mx-auto">
             <div className="branding flex flex-row items-center">
               <img className="mx-2" src="" alt="Logo" />
