@@ -16,7 +16,6 @@ const Home = () => {
           <div className="container flex flex-row items-center justify-between mx-auto">
             <div className="branding flex flex-row items-center">
               <img
-                className="mx-2"
                 src=""
                 alt="Job Application Tracker"
                 style={{ maxWidth: '200px' }}
@@ -24,9 +23,9 @@ const Home = () => {
             </div>
 
             <div className="flex flex-row items-center">
-              <div className="user mx-2">👤</div>
-              <div className="settings mx-2">⚙️</div>
-              <div className="dark-mode mx-2">
+              <div className="user mx-3">👤</div>
+              <div className="settings mx-3">⚙️</div>
+              <div className="dark-mode mx-3">
                 {darkMode.value ? (
                   <button type="button" onClick={darkMode.disable}>
                     ☀
