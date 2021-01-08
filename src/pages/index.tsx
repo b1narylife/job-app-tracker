@@ -13,7 +13,7 @@ const Home = () => {
 
       <main>
         <header className="py-3 shadow-2xl">
-          <div className="container flex flex-row items-center justify-between mx-auto">
+          <div className="container flex flex-row items-center justify-between mx-auto px-3 lg:px-0">
             <div className="branding flex flex-row items-center">
               <h1>Job Application Tracker</h1>
             </div>
@@ -24,11 +24,11 @@ const Home = () => {
               <div className="dark-mode mx-3">
                 {darkMode.value ? (
                   <button type="button" onClick={darkMode.disable}>
-                    ☀
+                    <span role="image">☀️</span>
                   </button>
                 ) : (
                   <button type="button" onClick={darkMode.enable}>
-                    ☾
+                    <span role="image">🕶</span>
                   </button>
                 )}
               </div>
