@@ -13,9 +13,6 @@ const Header = () => {
         </div>
 
         <div className="flex flex-row items-center">
-          <button className="add-task mx-3">
-            <span role="img">➕</span>
-          </button>
           <button className="profile mx-3">
             <span role="img">👤</span>
           </button>
