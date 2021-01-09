@@ -18,8 +18,8 @@ export function Card({ title, applications }: Card) {
       </div>
       <div className="card-body">
         {applications
-          .filter((application) => application.status.includes(title))
-          .map((item) => (
+          .filter((application: any) => application.status.includes(title))
+          .map((item: any) => (
             <div className="py-2 px-3 hover:opacity-50" key={item.id}>
               <Application
                 companyName={item.companyName}
