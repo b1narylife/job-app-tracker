@@ -2,11 +2,12 @@ import React from 'react';
 
 interface Application {
   companyName: string;
+  status: string;
 }
 
-export function Application({ companyName }: Application) {
+export function Application({ companyName, status }: Application) {
   return (
-    <div className="application border-t-2 py-2">
+    <div className="application cursor-pointer">
       <h2>{companyName}</h2>
     </div>
   );

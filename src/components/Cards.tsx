@@ -13,9 +13,11 @@ export function Cards() {
 
   return (
     <div className="cards-wrapper flex flex-wrap justify-between">
-      {cards.map((card) => (
-        <Card key={card} title={card} />
-      ))}
+      <Card title="prospective" />
+      <Card title="applied" />
+      <Card title="interviewing" />
+      <Card title="outcome" />
+      <Card title="feedback" />
     </div>
   );
 }
