@@ -6,7 +6,7 @@ interface Card {
 
 export function Card({ title }: Card) {
   return (
-    <div className="card w-60 my-3 p-3 border-current border-2 shadow-2xl">
+    <div className="card w-72 my-3 mx-auto p-3 border-current border-2 shadow-2xl">
       <div className="card-header flex justify-between">
         <h1 className="capitalize">{title}</h1>
         <button className="add-task mx-3">
