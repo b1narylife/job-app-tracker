@@ -13,7 +13,7 @@ export function Card({ title, applications }: Card) {
       <div className="card-header flex justify-between px-3 mb-3">
         <h1 className="card-title capitalize">{title}</h1>
         <button className="add-task mx-3">
-          <span role="img">➕</span>
+          <span role="img">+</span>
         </button>
       </div>
       <div className="card-body">
