@@ -5,7 +5,7 @@ interface Application {
   status: string;
 }
 
-export function Application({ companyName, status }: Application) {
+export function Application({ companyName }: Application) {
   return (
     <div className="application cursor-pointer">
       <h2>{companyName}</h2>

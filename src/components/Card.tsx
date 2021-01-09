@@ -4,52 +4,10 @@ import { Application } from './Application';
 
 interface Card {
   title: string;
+  applications: any;
 }
 
-export function Card({ title }: Card) {
-  const applications = [
-    {
-      id: 1,
-      companyName: 'B&Q',
-      status: 'prospective',
-    },
-    {
-      id: 2,
-      companyName: 'City Council',
-      status: 'interviewing',
-    },
-    {
-      id: 3,
-      companyName: 'Argos',
-      status: 'applied',
-    },
-    {
-      id: 4,
-      companyName: 'Homebargains',
-      status: 'applied',
-    },
-    {
-      id: 5,
-      companyName: 'Morrisons',
-      status: 'outcome',
-    },
-    {
-      id: 6,
-      companyName: 'Kiers',
-      status: 'interviewing',
-    },
-    {
-      id: 7,
-      companyName: 'Amazon',
-      status: 'feedback',
-    },
-    {
-      id: 8,
-      companyName: 'Deliveroo',
-      status: 'feedback',
-    },
-  ];
-
+export function Card({ title, applications }: Card) {
   return (
     <div className="card w-72 my-3 mx-auto py-3 border-current border-2 shadow-2xl">
       <div className="card-header flex justify-between px-3 mb-3">

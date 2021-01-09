@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Card } from './Card';
 
-export function Cards() {
+export function Cards({ applications }: any) {
   const cards = [
     'prospective',
     'applied',
@@ -13,11 +13,11 @@ export function Cards() {
 
   return (
     <div className="cards-wrapper flex flex-wrap justify-between">
-      <Card title="prospective" />
-      <Card title="applied" />
-      <Card title="interviewing" />
-      <Card title="outcome" />
-      <Card title="feedback" />
+      {cards.map((card) => (
+        <div key={card}>
+          <Card title={card} applications={applications} />
+        </div>
+      ))}
     </div>
   );
 }
