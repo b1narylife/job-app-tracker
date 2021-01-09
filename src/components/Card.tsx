@@ -59,14 +59,6 @@ export function Card({ title }: Card) {
         </button>
       </div>
       <div className="card-body">
-        {/* {applications.map((application) => (
-          <div className="py-2 px-3 hover:opacity-50" key={application.id}>
-            <Application
-              companyName={application.companyName}
-              status={application.status}
-            />
-          </div>
-        ))} */}
         {applications
           .filter((application) => application.status.includes(title))
           .map((item) => (
