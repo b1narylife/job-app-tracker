@@ -9,7 +9,7 @@ interface Card {
 
 export function Card({ title, applications }: Card) {
   return (
-    <div className="card w-72 my-3 mx-auto py-3 border-current border-2 shadow-2xl">
+    <div className="card w-72 lg:w-60 my-3 mx-auto py-3 border-current border-2 shadow-2xl">
       <div className="card-header flex justify-between px-3 mb-3">
         <h1 className="card-title capitalize">{title}</h1>
         <button className="add-task mx-3">

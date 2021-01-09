@@ -14,9 +14,7 @@ export function Cards({ applications }: any) {
   return (
     <div className="cards-wrapper flex flex-wrap justify-between">
       {cards.map((card) => (
-        <div key={card}>
-          <Card title={card} applications={applications} />
-        </div>
+        <Card key={card} title={card} applications={applications} />
       ))}
     </div>
   );
