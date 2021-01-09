@@ -13,8 +13,15 @@ const Header = () => {
         </div>
 
         <div className="flex flex-row items-center">
-          <div className="user mx-3">👤</div>
-          <div className="settings mx-3">⚙️</div>
+          <button className="add-task mx-3">
+            <span role="img">➕</span>
+          </button>
+          <button className="profile mx-3">
+            <span role="img">👤</span>
+          </button>
+          <button className="settings mx-3">
+            <span role="img">⚙️</span>
+          </button>
           <div className="dark-mode mx-3">
             {darkMode.value ? (
               <button type="button" onClick={darkMode.disable}>

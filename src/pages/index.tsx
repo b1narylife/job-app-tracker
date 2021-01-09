@@ -1,6 +1,8 @@
+import React from 'react';
 import Head from 'next/head';
 
 import Header from '../components/Header';
+import { Cards } from '../components/Cards';
 
 const Home = () => {
   return (
@@ -13,7 +15,7 @@ const Home = () => {
       <main>
         <Header />
         <div className="container mx-auto py-3">
-          <h2>Cards</h2>
+          <Cards />
         </div>
       </main>
     </div>
