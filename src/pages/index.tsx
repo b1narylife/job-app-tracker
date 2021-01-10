@@ -1,10 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
-
 import Header from '../components/Header';
-import { Cards } from '../components/Cards';
+import { ApplicationStages } from '../components/ApplicationStages';
 
-function Home({ data }: any) {
+interface Props {
+  applicationData: [];
+}
+
+function Home({ applicationData }: Props) {
   return (
     <div>
       <Head>
@@ -15,7 +18,7 @@ function Home({ data }: any) {
       <main>
         <Header />
         <div className="container mx-auto py-3">
-          <Cards applications={data} />
+          <ApplicationStages data={applicationData} />
         </div>
       </main>
     </div>
@@ -25,13 +28,10 @@ function Home({ data }: any) {
 export default Home;
 
 export async function getServerSideProps() {
-  // Fetch data from external API
-  // const res = await fetch(`http://localhost:3000/api/applications`);
   const res = await fetch(
     `https://job-app-tracker.vercel.app/api/applications`,
   );
-  const data = await res.json();
+  const applicationData = await res.json();
 
-  // Pass data to the page via props
-  return { props: { data } };
+  return { props: { applicationData } };
 }

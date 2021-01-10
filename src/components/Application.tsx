@@ -1,14 +1,13 @@
 import React from 'react';
 
-interface Application {
+interface Props {
   companyName: string;
-  status: string;
 }
 
-export function Application({ companyName }: Application) {
+export const Application = ({ companyName }: Props) => {
   return (
-    <div className="application cursor-pointer">
-      <h2>{companyName}</h2>
+    <div className="application my-1">
+      <p>{companyName}</p>
     </div>
   );
-}
+};
