@@ -13,11 +13,14 @@ const Header = () => {
         </div>
 
         <div className="flex flex-row items-center">
-          <button className="profile mx-3">
+          {/* <button className="profile mx-3">
             <span role="img">👤</span>
           </button>
           <button className="settings mx-3">
             <span role="img">⚙️</span>
+          </button> */}
+          <button className="settings mx-3">
+            <span role="img">+</span>
           </button>
           <div className="dark-mode mx-3">
             {darkMode.value ? (
