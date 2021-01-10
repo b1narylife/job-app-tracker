@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Application } from './Application';
 
 interface Props {
@@ -21,7 +22,7 @@ export const ApplicationStage = ({ stageTitle, applicationData }: Props) => {
       </div>
       <div className="application-stage-body px-3">
         {applicationData
-          .filter((application: any) => application.status.includes(stageTitle))
+          // .filter((application: any) => application.status.includes(stageTitle))
           .map((application: any) => (
             <div key={application.companyName}>
               <Application companyName={application.companyName} />
