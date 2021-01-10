@@ -16,6 +16,14 @@ const stages = [
 export const ApplicationStages = ({ data }: Props) => {
   const [applications, setApplications] = useState(data);
 
+  // const updateStatus = (_id: number) => {
+  //   const application = applications.filter(
+  //     (application, i) => application._id === _id,
+  //   );
+  //   application[0].status = '';
+  //   setApplications(applications.filter(() => application._id !== _id));
+  // };
+
   return (
     <div className="application-stages-wrapper flex flex-wrap justify-between">
       {stages.map((stage) => (
