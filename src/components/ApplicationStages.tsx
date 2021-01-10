@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { createContext, useState } from 'react';
 import { ApplicationStage } from './ApplicationStage';
 
 interface Props {
@@ -13,28 +13,30 @@ const stages = [
   'feedback',
 ];
 
+export const ApplicationContext = createContext({
+  updateStatus: null as any,
+});
+
 export const ApplicationStages = ({ data }: Props) => {
   const [applications, setApplications] = useState(data);
 
-  // const updateStatus = (_id: number) => {
-  //   const application = applications.filter(
-  //     (application, i) => application._id === _id,
-  //   );
-  //   application[0].status = '';
-  //   setApplications(applications.filter(() => application._id !== _id));
-  // };
+  const updateStatus = (_id: number) => {
+    console.log(_id);
+  };
 
   return (
-    <div className="application-stages-wrapper flex flex-wrap justify-between">
-      {stages.map((stage) => (
-        <ApplicationStage
-          key={stage}
-          stageTitle={stage}
-          applicationData={applications.filter((application: any) =>
-            application.status.includes(stage),
-          )}
-        />
-      ))}
-    </div>
+    <ApplicationContext.Provider value={{ updateStatus }}>
+      <div className="application-stages-wrapper flex flex-wrap justify-between">
+        {stages.map((stage) => (
+          <ApplicationStage
+            key={stage}
+            stageTitle={stage}
+            applicationData={applications.filter((application: any) =>
+              application.status.includes(stage),
+            )}
+          />
+        ))}
+      </div>
+    </ApplicationContext.Provider>
   );
 };

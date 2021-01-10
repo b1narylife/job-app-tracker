@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useDrop } from 'react-dnd';
 
 import { Application } from './Application';
 import { ApplicationTypes } from '../utils/applications';
+import { ApplicationContext } from './ApplicationStages';
 
 interface Props {
   stageTitle: string;
@@ -10,9 +11,11 @@ interface Props {
 }
 
 export const ApplicationStage = ({ stageTitle, applicationData }: Props) => {
+  const { updateStatus } = useContext(ApplicationContext);
+
   const [{ isOver }, drop] = useDrop({
     accept: ApplicationTypes.APPLICATION,
-    drop: (item, monitor) => console.log(item),
+    drop: (item, monitor) => updateStatus(item.id),
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),
     }),
