@@ -1,10 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
-import { ApplicationStages } from '../components/ApplicationStages';
+import { Applications } from '../components/Applications';
+import { Application } from '../utils/application';
 
 interface Props {
-  applicationData: [];
+  applicationData: Application[];
 }
 
 function Home({ applicationData }: Props) {
@@ -18,7 +19,7 @@ function Home({ applicationData }: Props) {
       <main>
         <Header />
         <div className="container mx-auto py-3">
-          <ApplicationStages data={applicationData} />
+          <Applications data={applicationData} />
         </div>
       </main>
     </div>
