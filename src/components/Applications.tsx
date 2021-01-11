@@ -27,7 +27,7 @@ export const Applications = ({ data }: Props) => {
       (application) => application._id === _id,
     );
 
-    application[0].status = '';
+    application[0].status = ''; // need to set new status here...
 
     setApplications(
       applications
