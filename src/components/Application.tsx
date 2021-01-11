@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDrag } from 'react-dnd';
-import { ApplicationTypes } from '../utils/applications';
+import { ApplicationType } from '../utils/application';
 
 interface Props {
   id: number;
@@ -10,7 +10,7 @@ interface Props {
 export const Application = ({ id, companyName }: Props) => {
   const [{ isDragging }, drag] = useDrag({
     item: {
-      type: ApplicationTypes.APPLICATION,
+      type: ApplicationType.APPLICATION,
       id: id,
     },
     collect: (monitor) => ({

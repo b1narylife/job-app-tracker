@@ -12,7 +12,7 @@ export const DropZone = ({ children }: Props) => {
 
   const [{ isOver }, drop] = useDrop({
     accept: ApplicationType.APPLICATION,
-    drop: (item, monitor) => updateStatus(item.id), // need to fix this type error
+    drop: (item) => updateStatus(item.id), // need to fix this type error
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),
     }),
@@ -20,12 +20,12 @@ export const DropZone = ({ children }: Props) => {
 
   return (
     <div
+      ref={drop}
       className={
         isOver
           ? 'bg-gray-300 application-drop-zone pb-8'
           : 'application-drop-zone pb-8'
       }
-      ref={drop}
     >
       {children}
     </div>
