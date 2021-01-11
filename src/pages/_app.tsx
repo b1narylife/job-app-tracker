@@ -1,8 +1,5 @@
 import type { AppProps /*, AppContext */ } from 'next/app';
-<<<<<<< HEAD
-=======
 import React from 'react';
->>>>>>> rebase
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 

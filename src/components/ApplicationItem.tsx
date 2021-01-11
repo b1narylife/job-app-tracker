@@ -19,7 +19,9 @@ export const ApplicationItem = ({ application }: Props) => {
 
   return (
     <div className="application-item cursor-pointer my-2" ref={drag}>
-      <p>{application.companyName}</p>
+      <p className={isDragging ? 'text-red-500' : ''}>
+        {application.companyName}
+      </p>
     </div>
   );
 };
