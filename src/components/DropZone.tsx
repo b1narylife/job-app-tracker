@@ -1,5 +1,5 @@
 import { ReactNode, useContext } from 'react';
-import React, { useDrop } from 'react-dnd';
+import React, {DragObjectWithType, useDrop} from 'react-dnd';
 import { ApplicationType } from '../utils/application';
 import { ApplicationContext } from './Applications';
 
@@ -7,14 +7,18 @@ interface Props {
   children: ReactNode;
 }
 
+interface Item extends DragObjectWithType {
+  id: number;
+}
+
 export const DropZone = ({ children }: Props) => {
   const { updateStatus } = useContext(ApplicationContext);
 
   const [{ isOver }, drop] = useDrop({
     accept: ApplicationType.APPLICATION,
-    drop: (item) => updateStatus(item.id), // need to fix this type error
+    drop: (item: Item) => updateStatus(item.id),
     collect: (monitor) => ({
-      isOver: !!monitor.isOver(),
+      isOver: monitor.isOver(),
     }),
   });
 

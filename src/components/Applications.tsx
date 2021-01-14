@@ -16,7 +16,7 @@ const stages = [
 ];
 
 export const ApplicationContext = createContext({
-  updateStatus: null as any, // look into correct typing here
+  updateStatus: null, // look into correct typing here
 });
 
 export const Applications = ({ data }: Props) => {

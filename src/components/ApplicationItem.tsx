@@ -13,7 +13,7 @@ export const ApplicationItem = ({ application }: Props) => {
       id: application._id,
     },
     collect: (monitor) => ({
-      isDragging: !!monitor.isDragging(),
+      isDragging: monitor.isDragging(),
     }),
   });
 
