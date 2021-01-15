@@ -1,9 +1,10 @@
-import { ReactNode, useContext } from 'react';
-import React, {DragObjectWithType, useDrop} from 'react-dnd';
-import { ApplicationType } from '../utils/application';
-import { ApplicationContext } from './Applications';
+import { ReactNode, useContext } from "react";
+import React, { DragObjectWithType, useDrop } from "react-dnd";
+import { ApplicationType } from "../utils/application";
+import { ApplicationContext } from "./Applications";
 
 interface Props {
+  id: string;
   children: ReactNode;
 }
 
@@ -11,11 +12,13 @@ interface Item extends DragObjectWithType {
   id: number;
 }
 
-export const DropZone = ({ children }: Props) => {
+export const DropZone = ({ id, children }: Props) => {
   const { updateStatus } = useContext(ApplicationContext);
 
   const [{ isOver }, drop] = useDrop({
     accept: ApplicationType.APPLICATION,
+    options: { shallow: true },
+    // @ts-ignore
     drop: (item: Item) => updateStatus(item.id),
     collect: (monitor) => ({
       isOver: monitor.isOver(),
@@ -25,10 +28,11 @@ export const DropZone = ({ children }: Props) => {
   return (
     <div
       ref={drop}
+      id={id}
       className={
         isOver
-          ? 'bg-gray-300 application-drop-zone pb-8'
-          : 'application-drop-zone pb-8'
+          ? "active application-drop-zone pb-8 bg-gray-300"
+          : "application-drop-zone pb-8"
       }
     >
       {children}

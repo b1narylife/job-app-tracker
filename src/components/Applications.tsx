@@ -1,18 +1,18 @@
-import React, { createContext, useState } from 'react';
-import { Application } from '../utils/application';
-import { ApplicationItem } from './ApplicationItem';
-import { DropZone } from './DropZone';
+import React, { createContext, useState, useEffect } from "react";
+import { Application } from "../utils/application";
+import { ApplicationItem } from "./ApplicationItem";
+import { DropZone } from "./DropZone";
 
 interface Props {
   data: Application[];
 }
 
-const stages = [
-  'prospective',
-  'applied',
-  'interviewing',
-  'outcome',
-  'feedback',
+const stages: Array<string> = [
+  "prospective",
+  "applied",
+  "interviewing",
+  "outcome",
+  "feedback",
 ];
 
 export const ApplicationContext = createContext({
@@ -22,21 +22,23 @@ export const ApplicationContext = createContext({
 export const Applications = ({ data }: Props) => {
   const [applications, setApplications] = useState(data);
 
-  const updateStatus = (_id: number) => {
+  function updateStatus(_id: number) {
     const application = applications.filter(
-      (application) => application._id === _id,
+      (application) => application._id === _id
     );
 
-    application[0].status = ''; // need to set new status here...
+    const activeDropZone = document.getElementsByClassName("active");
+    application[0].status = activeDropZone[0].id;
 
     setApplications(
       applications
         .filter((application) => application._id !== _id)
-        .concat(application[0]),
+        .concat(application[0])
     );
-  };
+  }
 
   return (
+    // @ts-ignore
     <ApplicationContext.Provider value={{ updateStatus }}>
       <div className="applications-wrapper flex flex-wrap justify-between">
         {stages.map((stage) => (
@@ -49,13 +51,13 @@ export const Applications = ({ data }: Props) => {
               <p>
                 {
                   applications.filter((application) =>
-                    application.status.includes(stage),
+                    application.status.includes(stage)
                   ).length
                 }
               </p>
             </div>
             <div className="card-body">
-              <DropZone>
+              <DropZone id={stage}>
                 {applications
                   .filter((application) => application.status.includes(stage))
                   .map((application) => (
