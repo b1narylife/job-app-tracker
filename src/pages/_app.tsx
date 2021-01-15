@@ -1,16 +1,29 @@
-import type { AppProps /*, AppContext */ } from 'next/app';
-import React from 'react';
-import { DndProvider } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
+import type { AppProps /*, AppContext */ } from "next/app";
+import React, { useEffect, useState } from "react";
+import { DndProvider } from "react-dnd";
+import { TouchBackend } from "react-dnd-touch-backend";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
-import '../styles/global.css';
+import "../styles/global.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      setIsMobile(true);
+    }
+  }, []);
+
   return (
-    <DndProvider backend={HTML5Backend}>
+    <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
       <Component {...pageProps} />
     </DndProvider>
   );
-}
+};
 
 export default MyApp;
