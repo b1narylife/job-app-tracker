@@ -15,10 +15,6 @@ const stages: Array<string> = [
   "feedback",
 ];
 
-export const ApplicationContext = createContext({
-  updateStatus: null, // look into correct typing here
-});
-
 export const Applications = ({ data }: Props) => {
   const [applications, setApplications] = useState(data);
 
@@ -38,39 +34,36 @@ export const Applications = ({ data }: Props) => {
   }
 
   return (
-    // @ts-ignore
-    <ApplicationContext.Provider value={{ updateStatus }}>
-      <div className="applications-wrapper flex flex-wrap justify-between">
-        {stages.map((stage) => (
-          <div
-            className="application-card w-72 lg:w-60 border border-2 border-current shadow-2xl my-2 mx-auto p-2"
-            key={stage}
-          >
-            <div className="card-title flex justify-between border-b-2 border-current">
-              <p className="capitalize mb-2">{stage}</p>
-              <p>
-                {
-                  applications.filter((application) =>
-                    application.status.includes(stage)
-                  ).length
-                }
-              </p>
-            </div>
-            <div className="card-body">
-              <DropZone id={stage}>
-                {applications
-                  .filter((application) => application.status.includes(stage))
-                  .map((application) => (
-                    <ApplicationItem
-                      key={application._id}
-                      application={application}
-                    />
-                  ))}
-              </DropZone>
-            </div>
+    <div className="applications-wrapper flex flex-wrap justify-between">
+      {stages.map((stage) => (
+        <div
+          className="application-card w-72 lg:w-60 border border-2 border-current shadow-2xl my-2 mx-auto p-2"
+          key={stage}
+        >
+          <div className="card-title flex justify-between border-b-2 border-current">
+            <p className="capitalize mb-2">{stage}</p>
+            <p>
+              {
+                applications.filter((application) =>
+                  application.status.includes(stage)
+                ).length
+              }
+            </p>
           </div>
-        ))}
-      </div>
-    </ApplicationContext.Provider>
+          <div className="card-body">
+            <DropZone id={stage} updateStatus={updateStatus}>
+              {applications
+                .filter((application) => application.status.includes(stage))
+                .map((application) => (
+                  <ApplicationItem
+                    key={application._id}
+                    application={application}
+                  />
+                ))}
+            </DropZone>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 };
