@@ -12,11 +12,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       backend={TouchBackend}
       options={{
         enableMouseEvents: true,
-        scrollAngleRanges: [
-          { start: 300 },
-          { end: 60 },
-          { start: 120, end: 240 },
-        ],
       }}
     >
       <Component {...pageProps} />
