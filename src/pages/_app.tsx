@@ -9,6 +9,11 @@ import "../styles/global.css";
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [isMobile, setIsMobile] = useState(false);
 
+  const options = {
+    enableTouchEvents: true,
+    scrollAngleRanges: [{ start: 300 }, { end: 60 }, { start: 120, end: 240 }],
+  };
+
   useEffect(() => {
     if (
       navigator.userAgent.match(/Android/i) ||
@@ -21,10 +26,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     ) {
       setIsMobile(true);
     }
-  }, []);
+  }, [isMobile]);
 
   return (
-    <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
+    <DndProvider
+      backend={isMobile ? TouchBackend : HTML5Backend}
+      options={options}
+    >
       <Component {...pageProps} />
     </DndProvider>
   );
