@@ -5,18 +5,18 @@ import { ApplicationType } from "../utils/application";
 interface Props {
   id: string;
   children: ReactNode;
-  updateStatus: (_id: number) => void;
+  updateApplication: (_id: number) => void;
 }
 
 interface Item extends DragObjectWithType {
   id: number;
 }
 
-export const DropZone = ({ id, children, updateStatus }: Props) => {
+export const DropZone = ({ id, children, updateApplication }: Props) => {
   const [{ isOver }, drop] = useDrop({
     accept: ApplicationType.APPLICATION,
     options: { shallow: true },
-    drop: (item: Item) => updateStatus(item.id),
+    drop: (item: Item) => updateApplication(item.id),
     collect: (monitor) => ({
       isOver: monitor.isOver(),
     }),

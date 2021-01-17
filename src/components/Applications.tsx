@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Application } from "../utils/application";
 import { ApplicationItem } from "./ApplicationItem";
 import { DropZone } from "./DropZone";
@@ -18,7 +18,11 @@ const stages: Array<string> = [
 export const Applications = ({ data }: Props) => {
   const [applications, setApplications] = useState(data);
 
-  function updateStatus(_id: number) {
+  // const addApplication = () => {};
+  //
+  // const deleteApplication = () => {};
+
+  const updateApplication = (_id: number) => {
     const application = applications.filter(
       (application) => application._id === _id
     );
@@ -31,7 +35,7 @@ export const Applications = ({ data }: Props) => {
         .filter((application) => application._id !== _id)
         .concat(application[0])
     );
-  }
+  };
 
   return (
     <div className="applications-wrapper flex flex-wrap justify-between">
@@ -40,18 +44,16 @@ export const Applications = ({ data }: Props) => {
           className="application-card w-72 lg:w-60 border border-2 border-current shadow-2xl my-2 mx-auto p-2"
           key={stage}
         >
-          <div className="card-title flex justify-between border-b-2 border-current">
-            <p className="capitalize mb-2">{stage}</p>
-            <p>
-              {
-                applications.filter((application) =>
-                  application.status.includes(stage)
-                ).length
-              }
-            </p>
+          <div className="card-header flex justify-between items-center border-b-2 border-current pb-2">
+            <p className="card-title capitalize mb-0">{`${stage} (${
+              applications.filter((application) =>
+                application.status.includes(stage)
+              ).length
+            })`}</p>
+            <button className="add-application">+</button>
           </div>
           <div className="card-body">
-            <DropZone id={stage} updateStatus={updateStatus}>
+            <DropZone id={stage} updateApplication={updateApplication}>
               {applications
                 .filter((application) => application.status.includes(stage))
                 .map((application) => (
