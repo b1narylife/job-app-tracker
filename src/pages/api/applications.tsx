@@ -2,44 +2,24 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 const applications = [
   {
+    _id: 0,
+    companyName: 'Burger King',
+    status: 'Prospective',
+  },
+  {
     _id: 1,
-    companyName: 'B&Q',
-    status: 'prospective',
+    companyName: 'KFC',
+    status: 'Applied',
   },
   {
     _id: 2,
-    companyName: 'City Council',
-    status: 'interviewing',
+    companyName: 'McDonalds',
+    status: 'Interviewing',
   },
   {
     _id: 3,
-    companyName: 'Argos',
-    status: 'applied',
-  },
-  {
-    _id: 4,
-    companyName: 'Homebargains',
-    status: 'applied',
-  },
-  {
-    _id: 5,
-    companyName: 'Morrisons',
-    status: 'outcome',
-  },
-  {
-    _id: 6,
-    companyName: 'Kiers',
-    status: 'interviewing',
-  },
-  {
-    _id: 7,
-    companyName: 'Amazon',
-    status: 'feedback',
-  },
-  {
-    _id: 8,
-    companyName: 'Deliveroo',
-    status: 'feedback',
+    companyName: 'Subway',
+    status: 'Outcome',
   },
 ];
 

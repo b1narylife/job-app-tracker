@@ -12,15 +12,10 @@ const stages: Array<string> = [
   "applied",
   "interviewing",
   "outcome",
-  "feedback",
 ];
 
 export const Applications = ({ data }: Props) => {
   const [applications, setApplications] = useState(data);
-
-  // const addApplication = () => {};
-  //
-  // const deleteApplication = () => {};
 
   const updateApplication = (_id: number) => {
     const application = applications.filter(
