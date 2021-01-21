@@ -14,7 +14,7 @@ const stages: Array<string> = [
   "Outcome",
 ];
 
-export const Applications = ({ data }: Props) => {
+export const ApplicationsComponent = ({ data }: Props) => {
   const [applications, setApplications] = useState(data);
 
   const updateApplication = (_id: number) => {
