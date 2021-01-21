@@ -33,10 +33,10 @@ export const Applications = ({ data }: Props) => {
   };
 
   return (
-    <div className="applications-wrapper flex flex-wrap justify-between">
+    <div className="applications-wrapper grid grid-cols-1 md:grid-cols-2 gap-4 p-3 mx-auto">
       {stages.map((stage) => (
         <div
-          className="application-card w-72 lg:w-60 border border-2 border-current shadow-2xl my-2 mx-auto p-2"
+          className="application-card h-60 border border-2 border-current shadow-2xl p-3"
           key={stage}
         >
           <div className="card-header flex justify-between items-center border-b-2 border-current pb-2">
@@ -47,7 +47,7 @@ export const Applications = ({ data }: Props) => {
             })`}</p>
             <button className="add-application">+</button>
           </div>
-          <div className="card-body">
+          <div className="card-body h-full">
             <DropZone id={stage} updateApplication={updateApplication}>
               {applications
                 .filter((application) => application.status.includes(stage))

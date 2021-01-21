@@ -28,8 +28,8 @@ export const DropZone = ({ id, children, updateApplication }: Props) => {
       id={id}
       className={
         isOver
-          ? "active application-drop-zone pb-8 bg-gray-300"
-          : "application-drop-zone pb-8"
+          ? "active application-drop-zone pb-8 mt-3 bg-gray-300"
+          : "application-drop-zone pb-8 mt-3"
       }
     >
       {children}
