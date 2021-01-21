@@ -26,10 +26,10 @@ export const ApplicationItem = ({ application }: Props) => {
         {application.companyName}
       </p>
       <div className="icons flex flex-1 justify-end">
-        <button className="mx-1">
-          <small>Notes</small>
+        <button className="mx-2">
+          <small>Edit</small>
         </button>
-        <button className="mx-1">
+        <button className="mx-2 text-red-500">
           <small>Delete</small>
         </button>
       </div>
