@@ -8,10 +8,10 @@ interface Props {
 }
 
 const stages: Array<string> = [
-  "prospective",
-  "applied",
-  "interviewing",
-  "outcome",
+  "Prospective",
+  "Applied",
+  "Interviewing",
+  "Outcome",
 ];
 
 export const Applications = ({ data }: Props) => {
@@ -32,8 +32,6 @@ export const Applications = ({ data }: Props) => {
     );
   };
 
-  console.log(applications)
-
   return (
     <div className="applications-wrapper flex flex-wrap justify-between">
       {stages.map((stage) => (
@@ -44,7 +42,7 @@ export const Applications = ({ data }: Props) => {
           <div className="card-header flex justify-between items-center border-b-2 border-current pb-2">
             <p className="card-title capitalize mb-0">{`${stage} (${
               applications.filter((application) =>
-                application.status.includes(stage.toLowerCase())
+                application.status.includes(stage)
               ).length
             })`}</p>
             <button className="add-application">+</button>
@@ -52,7 +50,7 @@ export const Applications = ({ data }: Props) => {
           <div className="card-body">
             <DropZone id={stage} updateApplication={updateApplication}>
               {applications
-                .filter((application) => application.status.includes(stage.toLowerCase()))
+                .filter((application) => application.status.includes(stage))
                 .map((application) => (
                   <ApplicationItem
                     key={application._id}

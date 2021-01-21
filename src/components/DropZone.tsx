@@ -25,7 +25,7 @@ export const DropZone = ({ id, children, updateApplication }: Props) => {
   return (
     <div
       ref={drop}
-      id={id.toLowerCase()}
+      id={id}
       className={
         isOver
           ? "active application-drop-zone pb-8 bg-gray-300"
