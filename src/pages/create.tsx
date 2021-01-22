@@ -43,19 +43,9 @@ function Login() {
                   type="submit"
                   value="submit"
                 >
-                  Login
+                  Register
                 </button>
               </form>
-            </div>
-            <div className="container mt-8 mx-auto py-3 text-center items-center justify-center flex flex-col">
-              <div className="registration">
-                <p>
-                  <small>
-                    <i>Don't have an account?</i>
-                  </small>
-                </p>
-                <a href="/create">Sign Up Here</a>
-              </div>
             </div>
           </div>
         </main>
