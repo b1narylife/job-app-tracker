@@ -1,4 +1,4 @@
-import React, { ReactChild } from "react";
+import React, { ReactChild, useState } from "react";
 import Header from "../components/Header";
 
 interface Props {
@@ -6,10 +6,12 @@ interface Props {
 }
 
 function Layout({ children }: Props) {
+  const [isUserLoggedIn] = useState(false);
+
   return (
     <div>
       <header>
-        <Header />
+        <Header isUserLoggedIn={isUserLoggedIn} />
       </header>
       <div>{children}</div>
     </div>

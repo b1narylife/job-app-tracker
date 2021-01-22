@@ -1,5 +1,5 @@
 import type { AppProps /*, AppContext */ } from "next/app";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { DndProvider } from "react-dnd";
 import { TouchBackend } from "react-dnd-touch-backend";
 
