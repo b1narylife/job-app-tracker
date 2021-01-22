@@ -13,6 +13,25 @@ const Header = () => {
         </div>
 
         <div className="flex flex-row items-center">
+          <div className="nav-links">
+            <ul className="flex">
+              <li className="link">
+                <a className="mx-2" href="/applications">
+                  Applications
+                </a>
+              </li>
+              <li className="link">
+                <a className="mx-2" href="/">
+                  Log out
+                </a>
+              </li>
+              <li className="link">
+                <a className="mx-2" href="/login">
+                  Log In
+                </a>
+              </li>
+            </ul>
+          </div>
           <div className="dark-mode mx-3">
             {darkMode.value ? (
               <button type="button" onClick={darkMode.disable}>
