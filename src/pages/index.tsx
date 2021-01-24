@@ -13,7 +13,7 @@ function Home() {
 
         <main>
           <div className="container mx-auto py-3 text-center">
-            <h1>Homepage</h1>
+            <a href="/applications">View Applications</a>
           </div>
         </main>
       </div>
