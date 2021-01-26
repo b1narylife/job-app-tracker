@@ -1,20 +1,19 @@
 import type { AppProps /*, AppContext */ } from "next/app";
 import React from "react";
 import { DndProvider } from "react-dnd";
-import { TouchBackend } from "react-dnd-touch-backend";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import { ModalProvider } from "react-simple-hook-modal";
 
 import "../styles/global.css";
+import "react-simple-hook-modal/dist/styles.css";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <DndProvider
-      backend={TouchBackend}
-      options={{
-        enableMouseEvents: true,
-      }}
-    >
-      <Component {...pageProps} />
-    </DndProvider>
+    <ModalProvider>
+      <DndProvider backend={HTML5Backend}>
+        <Component {...pageProps} />
+      </DndProvider>
+    </ModalProvider>
   );
 };
 

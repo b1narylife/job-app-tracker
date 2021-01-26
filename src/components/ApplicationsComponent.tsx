@@ -33,7 +33,7 @@ export const ApplicationsComponent = ({ data }: Props) => {
   };
 
   return (
-    <div className="applications-wrapper grid grid-cols-1 md:grid-cols-2 gap-4 p-3 mx-auto">
+    <div className="applications-wrapper static grid grid-cols-1 md:grid-cols-2 gap-4 p-3 mx-auto">
       {stages.map((stage) => (
         <div
           className="application-card h-60 border border-2 border-current shadow-2xl p-3"
