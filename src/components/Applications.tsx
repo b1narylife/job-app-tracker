@@ -33,7 +33,7 @@ export const Applications = ({ data }: Props) => {
     );
   };
 
-  const handleDeleteApplication = (_id: number) => {
+  const deleteApplication = (_id: number) => {
     setApplications(
       applications.filter((application) => application._id !== _id)
     );
@@ -62,7 +62,7 @@ export const Applications = ({ data }: Props) => {
                   <ApplicationItem
                     key={application._id}
                     application={application}
-                    handleDeleteApplication={handleDeleteApplication}
+                    deleteApplication={deleteApplication}
                   />
                 ))}
             </DropZone>

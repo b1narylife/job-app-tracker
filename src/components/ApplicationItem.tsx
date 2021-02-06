@@ -6,13 +6,10 @@ import { Modal, useModal, ModalTransition } from "react-simple-hook-modal";
 
 interface Props {
   application: Application;
-  handleDeleteApplication: any;
+  deleteApplication: any;
 }
 
-export const ApplicationItem = ({
-  application,
-  handleDeleteApplication,
-}: Props) => {
+export const ApplicationItem = ({ application, deleteApplication }: Props) => {
   const { isModalOpen, openModal, closeModal } = useModal();
   const [{ isDragging }, drag] = useDrag({
     item: {
@@ -39,7 +36,7 @@ export const ApplicationItem = ({
         <button
           className="mx-2 text-red-500"
           onClick={() => {
-            handleDeleteApplication(application._id);
+            deleteApplication(application._id);
           }}
         >
           <small>Delete</small>
