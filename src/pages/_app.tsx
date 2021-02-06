@@ -4,7 +4,7 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { ModalProvider } from "react-simple-hook-modal";
 
-import "../styles/global.css";
+import "tailwindcss/tailwind.css";
 import "react-simple-hook-modal/dist/styles.css";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
