@@ -5,7 +5,8 @@ const applications = [
     _id: 0,
     companyName: "Burger King",
     status: "Prospective",
-    notes: "",
+    notes:
+      "This looks like it could be a good temporary jobs whils studying in college.",
     interviewDate: null,
     interviewTime: null,
   },
@@ -21,7 +22,8 @@ const applications = [
     _id: 2,
     companyName: "McDonalds",
     status: "Interviewing",
-    notes: "",
+    notes:
+      "They have confirmed they are inviting me in for interview however the hiring manager is off sick so they are going to come back to me with who it is with in the next couple of days.",
     interviewDate: "02/02/2021",
     interviewTime: "10:00",
   },
@@ -29,7 +31,8 @@ const applications = [
     _id: 3,
     companyName: "Subway",
     status: "Outcome",
-    notes: "",
+    notes:
+      "Interview went well, I am just waiting for Karen to come back to me.",
     interviewDate: "05/01/5021",
     interviewTime: "15:30",
   },

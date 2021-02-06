@@ -48,7 +48,19 @@ export const ApplicationItem = ({ application }: Props) => {
           <div className="container mx-auto mt-3  flex flex-col">
             <div className="flex flex-row items-center justify-between">
               <p>{`Status: ${application.status}`}</p>
-              <button>change</button>
+            </div>
+            <div className="flex flex-col items-start">
+              <p className="mt-3">{`Interview Date: ${
+                application.interviewDate === null
+                  ? `N/A`
+                  : `${application.interviewDate}`
+              }`}</p>
+              <p className="mt-3">{`Interview Time: ${
+                application.interviewTime === null
+                  ? `N/A`
+                  : `${application.interviewTime}`
+              }`}</p>
+              <p className="mt-3">{`Notes: ${application.notes}`}</p>
             </div>
 
             <button className="absolute bottom-5 right-8" onClick={closeModal}>
