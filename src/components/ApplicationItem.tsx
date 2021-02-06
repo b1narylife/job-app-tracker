@@ -30,7 +30,7 @@ export const ApplicationItem = ({ application }: Props) => {
       </p>
       <div className="icons flex flex-1 justify-end">
         <button className="mx-2" onClick={openModal}>
-          <small>Edit</small>
+          <small>View</small>
         </button>
         <button className="mx-2 text-red-500">
           <small>Delete</small>
@@ -45,10 +45,13 @@ export const ApplicationItem = ({ application }: Props) => {
           <p className="text-center">
             <strong>{application.companyName}</strong>
           </p>
-          <div className="container mx-auto flex flex-col">
-            <p className="mt-3">{`Application status: ${application.status}`}</p>
+          <div className="container mx-auto mt-3  flex flex-col">
+            <div className="flex flex-row items-center justify-between">
+              <p>{`Status: ${application.status}`}</p>
+              <button>change</button>
+            </div>
 
-            <button className="ml-auto" onClick={closeModal}>
+            <button className="absolute bottom-5 right-8" onClick={closeModal}>
               Close
             </button>
           </div>

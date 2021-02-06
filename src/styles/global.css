@@ -11,3 +11,7 @@ body.dark-mode {
   color: #e5e7eb;
   background-color: #1f2937;
 }
+
+#react-simple-modal-container {
+  color: #1f2937;
+}
