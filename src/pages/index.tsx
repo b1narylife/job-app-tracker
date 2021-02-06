@@ -1,8 +1,14 @@
 import React from "react";
 import Head from "next/head";
 import Layout from "../components/Layout";
+import { Applications } from "../components/Applications";
+import { Application } from "../utils/application";
 
-function Home() {
+interface Props {
+  applicationData: Application[];
+}
+
+function Home({ applicationData }: Props) {
   return (
     <Layout>
       <div>
@@ -12,8 +18,8 @@ function Home() {
         </Head>
 
         <main>
-          <div className="container mx-auto py-3 text-center">
-            <a href="/applications">View Applications</a>
+          <div className="container mx-auto py-3">
+            <Applications data={applicationData} />
           </div>
         </main>
       </div>
@@ -22,3 +28,12 @@ function Home() {
 }
 
 export default Home;
+
+export async function getServerSideProps() {
+  const res = await fetch(
+    `https://job-app-tracker.vercel.app/api/applications`
+  );
+  const applicationData = await res.json();
+
+  return { props: { applicationData } };
+}
