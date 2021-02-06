@@ -18,6 +18,10 @@ const stages: Array<string> = [
 export const Applications = ({ data }: Props) => {
   const [applications, setApplications] = useState(data);
 
+  const addApplication = () => {
+    console.log("You clicked Add application");
+  };
+
   const updateApplication = (_id: number) => {
     const application = applications.filter(
       (application) => application._id === _id
@@ -34,13 +38,23 @@ export const Applications = ({ data }: Props) => {
   };
 
   const deleteApplication = (_id: number) => {
-    setApplications(
-      applications.filter((application) => application._id !== _id)
+    const application = applications.filter(
+      (application) => application._id === _id
     );
+
+    let confirmation = confirm(
+      `Are you sure you want to delete the application for: ${application[0].companyName} ?`
+    );
+
+    if (confirmation) {
+      setApplications(
+        applications.filter((application) => application._id !== _id)
+      );
+    }
   };
 
   return (
-    <div className="applications-wrapper static grid grid-cols-1 md:grid-cols-2 gap-4 p-3 mx-auto">
+    <div className="applications-wrapper static grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mx-auto py-3 px-2 lg:px-0">
       {stages.map((stage) => (
         <div
           className="application-card h-60 border border-2 border-current shadow-2xl p-3"
@@ -52,7 +66,9 @@ export const Applications = ({ data }: Props) => {
                 application.status.includes(stage)
               ).length
             })`}</p>
-            <button className="add-application">+</button>
+            <button className="add-application" onClick={addApplication}>
+              +
+            </button>
           </div>
           <div className="card-body h-full">
             <DropZone id={stage} updateApplication={updateApplication}>

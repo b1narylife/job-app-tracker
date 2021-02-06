@@ -11,16 +11,14 @@ function Layout({ children }: Props) {
       style={{ minHeight: "100vh" }}
     >
       <header className="py-3 shadow-2xl">
-        <div className="container flex flex-row items-center justify-between mx-auto px-3 lg:px-0">
-          <div className="branding flex flex-row items-center">
-            <a href="/">
-              <h1>Job Application Tracker</h1>
-            </a>
-          </div>
+        <div className="container mx-auto px-5 lg:px-0">
+          <a href="/">
+            <h1>Job Application Tracker</h1>
+          </a>
         </div>
       </header>
 
-      <div>{children}</div>
+      <div className="container mx-auto px-3 lg:px-0">{children}</div>
     </div>
   );
 }
