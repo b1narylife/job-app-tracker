@@ -1,3 +1,4 @@
+import app from "next/app";
 import React, { useState } from "react";
 import { Application } from "../utils/application";
 import { ApplicationItem } from "./ApplicationItem";
@@ -32,6 +33,12 @@ export const Applications = ({ data }: Props) => {
     );
   };
 
+  const handleDeleteApplication = (_id: number) => {
+    setApplications(
+      applications.filter((application) => application._id !== _id)
+    );
+  };
+
   return (
     <div className="applications-wrapper static grid grid-cols-1 md:grid-cols-2 gap-4 p-3 mx-auto">
       {stages.map((stage) => (
@@ -55,6 +62,7 @@ export const Applications = ({ data }: Props) => {
                   <ApplicationItem
                     key={application._id}
                     application={application}
+                    handleDeleteApplication={handleDeleteApplication}
                   />
                 ))}
             </DropZone>
