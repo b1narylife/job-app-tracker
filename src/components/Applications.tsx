@@ -66,9 +66,9 @@ export const Applications = ({ data }: Props) => {
                 application.status.includes(stage)
               ).length
             })`}</p>
-            <button className="add-application" onClick={addApplication}>
+            {/* <button className="add-application" onClick={addApplication}>
               +
-            </button>
+            </button> */}
           </div>
           <div className="card-body h-full">
             <DropZone id={stage} updateApplication={updateApplication}>

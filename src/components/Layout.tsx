@@ -1,4 +1,5 @@
 import React, { ReactChild } from "react";
+import Link from "next/link";
 
 interface Props {
   children: ReactChild;
@@ -12,9 +13,11 @@ function Layout({ children }: Props) {
     >
       <header className="py-3 shadow-2xl">
         <div className="container mx-auto px-5 lg:px-0">
-          <a href="/">
-            <h1>Job Application Tracker</h1>
-          </a>
+          <Link href="/">
+            <a>
+              <h1 className="text-center text-2xl">Job Application Tracker</h1>
+            </a>
+          </Link>
         </div>
       </header>
 
